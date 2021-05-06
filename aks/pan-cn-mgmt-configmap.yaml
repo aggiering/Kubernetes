@@ -8,18 +8,18 @@ data:
   PAN_MGMT_SECRET: pan-mgmt-secret
 
   # Panorama settings
-  PAN_PANORAMA_IP: "<panorama-IP>"
-  PAN_DEVICE_GROUP: "<panorama-device-group>"
-  PAN_TEMPLATE_STACK: "<panorama-template-stack>"
-  PAN_CGNAME: "<panorama-collector-group>"
+  PAN_PANORAMA_IP: "47.187.162.83"
+  PAN_DEVICE_GROUP: "K8S-AKS"
+  PAN_TEMPLATE_STACK: "K8S-Lab-Stack"
+  PAN_CGNAME: "CG1"
 
   # Intended License Bundle type - "CN-X-BASIC", "CN-X-BND1", "CN-X-BND2"
   # based on the authcode applied on the Panorama K8S plugin"
-  PAN_BUNDLE_TYPE: "<license-bundle-type>"
+  PAN_BUNDLE_TYPE: "CN-X-BND2"
 
 #Non-mandatory parameters
   # Recommended to have same name as the cluster name provided in Panorama Kubernetes plugin - helps with easier identification of pods if managing multiple clusters with same Panorama
-  #CLUSTER_NAME: "<Cluster name>"
+  CLUSTER_NAME: "panlab-aks"
 
   #PAN_PANORAMA_IP2: ""
   

@@ -48,7 +48,7 @@ spec:
         # This container installs the pan CNI binaries
         # and CNI network config file on each node.
         - name: install-pan-cni
-          image: <your-private-registry-image-path>
+          image: registry.panlab.io:5000/paloaltonetworks/pan_cni:1.0.4
           imagePullPolicy: Always
           command: ["/install-pan-cni.sh", "main"]
           lifecycle:

@@ -51,7 +51,7 @@ spec:
              topologyKey: "kubernetes.io/hostname"
       initContainers:
         - name: pan-mgmt-init
-          image: <your-private-registry-image-path>
+          image: rancher.panlab.io:5000/paloaltonetworks/pan_cn_mgmt_init:1.0.0
           command: ["/usr/bin/pan_start.sh"]
           imagePullPolicy: Always
           securityContext:
@@ -89,7 +89,7 @@ spec:
             value: pan-fw
       containers:
         - name: pan-mgmt
-          image: <your-private-registry-image-path>
+          image: rancher.panlab.io:5000/paloaltonetworks/panos_cn_mgmt:10.0.5
           terminationMessagePolicy: FallbackToLogsOnError
           command: ["/sbin/pan_start"]
           lifecycle:
@@ -197,10 +197,10 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panlogs
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panlogs
   - metadata:
       name: varlogpan
     spec:
@@ -219,10 +219,10 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panvarlog
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panvarlog
   - metadata:
       name: varcores
     spec:
@@ -241,10 +241,10 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panvarcores
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panvarcores
   - metadata:
       name: panplugincfg
     spec:
@@ -263,10 +263,10 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panplugincfg
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panplugincfg
   - metadata:
       name: panconfig
     spec:
@@ -285,10 +285,10 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panconfig
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panconfig
   - metadata:
       name: panplugins
     spec:
@@ -307,7 +307,7 @@ spec:
       # Enable this to use Local PVs, after deploying pan-local-storage 
       # storageclass and PVs (refer provided pan-cn-pv-local.yaml) and 
       # after creating the mount point on the host nodes for local PVs .
-      storageClassName: pan-local-storage
-      selector:
-        matchLabels:
-            pv: panplugins
+      #storageClassName: nfs-client
+      #selector:
+      #  matchLabels:
+      #      pv: panplugins
